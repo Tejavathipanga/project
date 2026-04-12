@@ -25,7 +25,7 @@ STATIC_DIR=BASE_DIR/'static'
 SECRET_KEY = 'django-insecure-cn-5+_a!bdgj17u+6c6elycg+pfi-kyhykzud^=!*z8$_zo=kk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 import os
 
-STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MIDDLEWARE = [
@@ -99,10 +99,10 @@ if os.environ.get("RENDER"):
             "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
             "HOST": os.environ.get("MYSQLHOST"), 
             "PORT": os.environ.get("MYSQLPORT", "3306"),
-                        "OPTIONS": {
-                "ssl": {
-                    "ca": "/etc/ssl/certs/ca-certificates.crt"
-                }
+                       "OPTIONS": {
+                       "ssl": {
+                         "ca": ""
+           }
             }
  
         } 
