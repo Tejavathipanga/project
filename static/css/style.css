@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    margin: 5px;
+    background-color: #2c3e50; 
+}
+
+.add { background: green; }
+.update { background: orange; }
+.delete { background: red; }
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+.home-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-weight: bold;
+    margin-right:800px;
+}
+
+.home-btn:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+#b1{
+    background-color: blueviolet;
+}
+#a1{
+    text-decoration: none;
+    color: white;
+}
+</style>
+<body>
+    <a href="{% url 'STU1' %}">
+    <button class="btn add">+ Add Student</button>
+</a><br><br><br>
+    <table border="2px solid">
+       <tr>
+         <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Student Department</th>
+        <th>Update</th>
+        <th>Delete</th>
+        
+       </tr>
+       {% for i in data %}
+       <tr>
+        <td>{{i.std_id}}</td>
+        <td>{{i.std_name}}</td>
+        <td>{{i.department}}</td>
+        <td>
+            <a href="{% url 'update1' i.id %}"> <button class="btn update">Update</button></a>
+        </td>
+        <td>
+            <a href="{% url 'delete1' i.id %}" onclick="return confirm('are sure to delete')"> <button class="btn delete">Delete</button></a>
+        </td>
+       
+       </tr>
+        {% endfor %}
+
+       
+    </table>
+    <div style="text-align:right; margin-bottom:10px;">
+    <a href="{% url 'HOME' %}">
+        <button class="btn home-btn">Home</button>
+    </a>
+</div>
+</body>
+</html>

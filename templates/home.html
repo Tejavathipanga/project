@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container">
+
+    <h1>College Dashboard</h1>
+
+    <!-- NAVBAR -->
+    <div style="text-align:center;">
+        <a href="{% url 'Dep' %}" >
+            <button class="btn">Departments</button>
+        </a>
+
+        <a href="{% url 'TEACH' %}">
+            <button class="btn">Teachers</button>
+        </a>
+
+        <a href="{% url 'STU' %}">
+            <button class="btn">Students</button>
+        </a>
+    </div>
+
+    <hr><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- SECTION BUTTONS -->
+    
+
+    <div style="text-align:center;">
+        <a href="{% url 'Dep' %}">
+            <button class="btn add">View Departments</button>
+        </a>
+
+        <a href="{% url 'TEACH' %}">
+            <button class="btn add">View Teachers</button>
+        </a>
+
+        <a href="{% url 'STU' %}">
+            <button class="btn add">View Students</button>
+        </a>
+    </div>
+
+</div>
+</body>
+</html>

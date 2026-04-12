@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+#b1{
+    background-color: blueviolet;
+}
+#a1{
+    text-decoration: none;
+    color: white;
+}
+</style>
+<body>
+    
+   <a href="{% url 'Dep1' %}">
+    <button class="btn add">+ Add Department</button>
+</a><br><br><br>
+    <h2>Department Details</h2>
+    <table border="2px solid">
+       <tr>
+         <th>Department Id</th>
+        <th>Department Name</th>
+        <th>DELETE</th>
+        
+       </tr>
+       {% for i in data %}
+       <tr>
+        <td>{{i.dep_id}}</td>
+        <td>{{i.dep_name}}</td>
+        <td>
+            <a href="{% url 'delete2' i.id %}" onclick="return confirm('are you sure want to delete')"> <button class="btn delete">Delete</button></a>
+        </td>
+       
+       </tr>
+        {% endfor %}
+
+       
+    </table>
+    <div style="text-align:right; margin-bottom:10px;">
+    <a href="{% url 'HOME' %}">
+        <button class="btn home-btn"> Home</button>
+    </a>
+</div>
+</body>
+</html>
