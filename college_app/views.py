@@ -133,11 +133,24 @@ class teacher_update(View):
         context={'form1':form1}
         return render (a,'teachform.html',context)
 class teacher_delete(View):
-    def get(self,a,id):
-        data=Teachers.objects.get(id=id)
-        data.delete()
-        return redirect('TEACH')
+    def get(self, request, id):
+        return render(request, 'delform.html', {'id': id})
 
+    def post(self, request, id):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+
+        if username == "Teja" and password == "Teja@2004":
+            data =Teachers.objects.get(id=id)
+            data.delete()
+            return redirect('TEACH')
+        else:
+            message = "Invalid details"
+            return render(request, 'delform.html', {
+                'message': message,
+                'id': id
+            })
 
 
 
@@ -183,10 +196,24 @@ class student_update(View):
         context={'form2':form2}
         return render (a,'stdform.html',context)
 class student_delete(View):
-    def get(self,a,id):
-        data=Students.objects.get(id=id)
-        data.delete()
-        return redirect('STU')
+    def get(self, request, id):
+        return render(request, 'delform.html', {'id': id})
+
+    def post(self, request, id):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+
+        if username == "Teja" and password == "Teja@2004":
+            data =Students.objects.get(id=id)
+            data.delete()
+            return redirect('STU')
+        else:
+            message = "Invalid details"
+            return render(request, 'delform.html', {
+                'message': message,
+                'id': id
+            })
 
             
 
