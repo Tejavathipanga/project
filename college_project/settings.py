@@ -25,7 +25,7 @@ STATIC_DIR=BASE_DIR/'static'
 SECRET_KEY = 'django-insecure-cn-5+_a!bdgj17u+6c6elycg+pfi-kyhykzud^=!*z8$_zo=kk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [  "127.0.0.1",
     "localhost",
@@ -101,9 +101,9 @@ if os.environ.get("MYSQLHOST"):
             "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
             "HOST": os.environ.get("MYSQLHOST"), 
             "PORT": os.environ.get("MYSQLPORT", "3306"),
-                       "OPTIONS": {
+"OPTIONS": {
     "ssl": {
-        "ca": "/etc/ssl/certs/ca-certificates.crt"
+        "ca": os.path.join(BASE_DIR, "ca.pem")
     }
 }
 
