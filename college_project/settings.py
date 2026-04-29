@@ -25,9 +25,11 @@ STATIC_DIR=BASE_DIR/'static'
 SECRET_KEY = 'django-insecure-cn-5+_a!bdgj17u+6c6elycg+pfi-kyhykzud^=!*z8$_zo=kk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [  "127.0.0.1",
+    "localhost",
+    "project-2-uc5b.onrender.com"]
 
 
 # Application definition
