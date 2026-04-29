@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'college_project.wsgi.application'
 # }
 
 import os 
-if os.environ.get("RENDER"): 
+if os.environ.get("MYSQLHOST"): 
     # Production (Render + Railway MySQL) 
     DATABASES = { 
         "default": { 
